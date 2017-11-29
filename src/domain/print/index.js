@@ -1,7 +1,8 @@
-import console from './useCases/console'
-
-const printService = {
-    console
+const console =  async () => {
+    const module = await import('./useCases/console');
+    return module.default();
 };
 
-export default printService;
+export {
+    console
+};

@@ -5,9 +5,9 @@ import domain from './domain';
 
 class App extends Component {
   handleClick = async () => {
-    const printService = await domain.print()
-    printService.console();
+    domain.print.console();
   }
+  
   render() {
     return (
       <div className="App">
