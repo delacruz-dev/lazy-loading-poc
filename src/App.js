@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import domain from './domain';
 
 class App extends Component {
-  handleClick = () => {
-    // Note that because a network request is involved, some indication
-    // of loading would need to be shown in a production-level site/app.
-    import('./print')
-      .then(module => {
-       const print = module.default;
-
-       print();
-    });
+  handleClick = async () => {
+    const printService = await domain.print()
+    printService.console();
   }
   render() {
     return (
